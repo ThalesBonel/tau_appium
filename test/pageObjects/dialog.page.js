@@ -2,6 +2,16 @@ class Dialog {
 
     get appBtn() {return $('//android.widget.TextView[@content-desc="App"]')}
     get alertDialogsBtn() {return $('//android.widget.TextView[@content-desc="Alert Dialogs"]')}
+
+    get okCancelDialogWithMsgBtn() {return $('//android.widget.Button[@content-desc="OK Cancel dialog with a message"]')}
+
+    get dialogModalTitle() {return $('//android.widget.TextView[@resource-id="android:id/alertTitle"]')}
+    get dialogMsg() {return $('//android.widget.TextView[@resource-id="android:id/message"]')}
+    get dialogOkBtn() {return $('//android.widget.Button[@resource-id="android:id/button1"]')}
+
+    get okCancelDialogLongMsgBtn() {return $('//android.widget.Button[@content-desc="OK Cancel dialog with a long message"]')}
+    get okCancelDialogUltraLongMsgBtn() {return $('//android.widget.Button[@content-desc="OK Cancel dialog with ultra long message"]')}
+
     get textEntryDialogBtn() {return $('//android.widget.Button[@content-desc="Text Entry dialog"]')}
     get nameField() {return $('//android.widget.EditText[@resource-id="io.appium.android.apis:id/username_edit"]')}
     get passwordField() {return $('//android.widget.EditText[@resource-id="io.appium.android.apis:id/password_edit"]')}
@@ -27,6 +37,18 @@ class Dialog {
     weekdayCheckbox(index) {
         return $(`//android.widget.CheckedTextView[@index=${index}]`)
     }
+
+    getDialogModalTitle() {
+        let title = this.dialogModalTitle.getText();
+        return title;
+    }
+
+    getDialogMsg() {
+        let msg = this.dialogMsg.getText();
+        return msg;
+    }
+
+    
 }
 
 module.exports = new Dialog();

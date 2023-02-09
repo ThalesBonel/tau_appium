@@ -27,7 +27,6 @@ describe('Dialog', ()=> {
         expect(text).equal("Teste Thales");
 
         dialog.okBtn.click();
-
     })
 
 
@@ -50,7 +49,7 @@ describe('Dialog', ()=> {
         // driver.setTimeouts(10000);
         driver.pause(10000);
 
-        // dialog.viewBtn.click;
+        dialog.viewBtn.click;
         dialog.textEntryDialogBtn.click();
 
     })
@@ -74,7 +73,7 @@ describe('Dialog', ()=> {
     })
 
 
-    it.only('Verify isEnabled, isSelected, isDisplayed', () => {
+    it('Verify isEnabled, isSelected, isDisplayed', () => {
         dialog.viewBtn.click();
         driver.touchAction([
             { action: 'press', x: 500, y: 1400 },
